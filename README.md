@@ -1,4 +1,4 @@
-# RGB-Lamp-
+# RGB Lamp Project
 A lamp which can display various colors, including a rainbow mode. Brightness can be varied. 
 
 ## Requirements 
@@ -17,6 +17,6 @@ A lamp which can display various colors, including a rainbow mode. Brightness ca
 - Switches could be debounced in software. 
 
 ## Components 
-RGB LED: HV-5RGB25 (Cheapest through hole with 4 leads) 
-Microcontroller: ATMEGA328P 
-Regulator: 78L05 +5V 100mA Voltage Regulator | Jaycar Electronics New Zealand
+- RGB LED: HV-5RGB25 (Cheapest through hole with 4 leads) 
+- Microcontroller: ATtiny85-20PU (PDIP through hole) 
+- Regulator: 78L05 +5V 100mA Voltage Regulator | Jaycar Electronics New Ze
