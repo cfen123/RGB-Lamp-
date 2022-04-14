@@ -1,0 +1,6 @@
+Added Component: Designator=HV-5RGB25(HV-5RGB25)
+Added Pin To Net: NetName=NetHV-5RGB25_1 Pin=HV-5RGB25-1
+Added Pin To Net: NetName=NetHV-5RGB25_2 Pin=HV-5RGB25-2
+Added Pin To Net: NetName=GND Pin=HV-5RGB25-3
+Added Pin To Net: NetName=NetHV-5RGB25_4 Pin=HV-5RGB25-4
+Added Member To Class: ClassName=full Member=Component HV-5RGB25 RGB_LED

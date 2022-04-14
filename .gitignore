@@ -2,3 +2,8 @@
 **/__Previews 
 **/History 
 **/ece components
+
+# Ignore Microchip Studio files. 
+**/.vs
+**/Debug
+*.componentinfo.xml
