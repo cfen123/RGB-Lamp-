@@ -5,7 +5,7 @@
     <ProjectVersion>7.0</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
     <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
-    <avrdevice>ATtiny85</avrdevice>
+    <avrdevice>ATtiny25</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
     <Language>C</Language>
@@ -20,31 +20,32 @@
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
     <ProgFlashFromRam>true</ProgFlashFromRam>
-    <RamSnippetAddress />
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
     <UncachedRange />
     <preserveEEPROM>true</preserveEEPROM>
-    <OverrideVtorValue />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
     <ResetRule>0</ResetRule>
     <eraseonlaunchrule>0</eraseonlaunchrule>
     <EraseKey />
     <AsfFrameworkConfig>
       <framework-data xmlns="">
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.49.1" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.49.1" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
+    <avrtool />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.Device>-mmcu=attiny85 -B "%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\gcc\dev\attiny85"</avrgcc.common.Device>
+  <avrgcc.common.Device>-mmcu=attiny25 -B "%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\gcc\dev\attiny25"</avrgcc.common.Device>
   <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
   <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
   <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
@@ -82,7 +83,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.Device>-mmcu=attiny85 -B "%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\gcc\dev\attiny85"</avrgcc.common.Device>
+  <avrgcc.common.Device>-mmcu=attiny25 -B "%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\gcc\dev\attiny25"</avrgcc.common.Device>
   <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
   <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
   <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
@@ -97,10 +98,10 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\include\</Value>
+      <Value>C:\Program Files (x86)\Atmel\Studio\7.0\packs\atmel\ATtiny_DFP\1.8.332\include\avr</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
-  <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
   <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
   <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
   <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
@@ -120,8 +121,32 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="buttons.c">
+      <SubType>compile</SubType>
+      <Link>buttons.c</Link>
+    </Compile>
+    <Compile Include="buttons.h">
+      <SubType>compile</SubType>
+      <Link>buttons.h</Link>
+    </Compile>
+    <Compile Include="colors.c">
+      <SubType>compile</SubType>
+      <Link>colors.c</Link>
+    </Compile>
+    <Compile Include="colors.h">
+      <SubType>compile</SubType>
+      <Link>common.h</Link>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="timers.c">
+      <SubType>compile</SubType>
+      <Link>timers.c</Link>
+    </Compile>
+    <Compile Include="timers.h">
+      <SubType>compile</SubType>
+      <Link>timers.h</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
