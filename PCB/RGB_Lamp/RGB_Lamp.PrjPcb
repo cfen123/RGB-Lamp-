@@ -100,7 +100,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document4]
-DocumentPath=RGB_LED.SchLib
+DocumentPath=RGB_Lamp.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -134,7 +134,7 @@ GenerateClassCluster=0
 DocumentUniqueId=FEFLTGHC
 
 [Document6]
-DocumentPath=RGB_LED.PcbLib
+DocumentPath=RGB_Lamp.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0

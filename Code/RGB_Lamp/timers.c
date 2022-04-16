@@ -3,6 +3,8 @@
 #include <iotn25.h>
 
 void timer0_config() {
+	TCCR0B |= (1 << CS01); // Set prescaler to /8
+	
 	// Fast PWM mode with 0xFF TOP
 	TCCR0A |= (1 << WGM01)|(1 << WGM00); 
 	TCCR0B &= ~(1 << WGM02); 
@@ -13,6 +15,8 @@ void timer0_config() {
 }
 
 void timer1_config() {
+	TCCR1 |= (1 << CS12); // Enables the timer with prescaler of 8
+	
 	OCR1C = 0xFF; // Counter top value in the PWM should be 0xFF. 
 	
 	// Configure PWM for OC1A. 
@@ -24,17 +28,6 @@ void timer1_config() {
 	GTCCR |= (1 << PWM1B); // Enable PWM 
 	GTCCR |= (1 << COM1B1); // Non-inverting mode, inverted OC1B not connected
 	GTCCR &= ~(1 << COM1B0);
-}
-
-void LED_on() {
-	ENABLE_TIMER0; 
-	ENABLE_TIMER1; 
-}
-
-void LED_off() {
-	DISABLE_TIMER0; 
-	DISABLE_TIMER1; 
-	TURN_LED_OFF; 
 }
 
 void change_color(Color c) {

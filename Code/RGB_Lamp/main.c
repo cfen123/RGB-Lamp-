@@ -18,18 +18,18 @@ static uint8_t state = 0; // This variable controls the color/pattern displayed.
 
 int main(void)
 {
-	buttons_init(); 
+	on_off_btn_init(); 
+	color_btn_init();
 	timer0_config(); 
 	timer1_config(); 
 	init_colors();
 	
-	DDRB |= (1 << PB0)|(1 << PB1)|(1 << PB4); // Make the PWM channels outputs. 
 	MCUCR |= (1 << SM1); // Power down mode. 
 	MCUCR &= ~(1 << SM0);
 	
 	sei();
-	LED_on();
 	change_color(get_color(0));
+	TURN_LED_ON;
 	//sleep(); // LED is initially off. 
 	
     while (1) {
@@ -38,14 +38,14 @@ int main(void)
 }
 
 void sleep() {
-	LED_off();
+	TURN_LED_OFF;
 	sleep_enable(); 
 	sleep_cpu(); 
 }
 
 void wakeup() {
 	sleep_disable(); 
-	LED_on();
+	TURN_LED_ON;
 }
 
 void update_state() {

@@ -15,8 +15,9 @@
 
 #define SLEEP_ENABLED (MCUCR & (1 << SE))
 
+#define CLEAR_PCINT_FLAG GIFR |= (1 << PCIF) 
+
 void color_btn_init(); // Configure color changing button on PCINT2/INT0. 
 void on_off_btn_init(); // Configure on/off button on PCINT3. 
-void buttons_init(); // Initialize buttons. Combines the above two functions. 
 
 #endif
