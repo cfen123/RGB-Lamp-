@@ -1,8 +1,6 @@
 #ifndef TIMERS_H 
 #define TIMERS_H 
 
-#include "colors.h"
-
 /* 
 	Timer/Counter 0 and Timer/Counter 1 will be used to generate PWM signals on 
 	PB0 (red), PB1 (green) and PB4 (blue). Since the LED is common cathode, non-inverting PWM 
@@ -16,7 +14,5 @@
 
 void timer0_config(); // Initializes Timer/Counter 0
 void timer1_config(); // Initializes Timer/Counter 1
-void change_color(Color c); // Changes the color displayed by altering the OCRxx registers. 
-
 
 #endif

@@ -10,7 +10,7 @@ uint8_t eeprom_read_byte(uint8_t address) {
 	return EEDR; 
 }
 
-void eeprom_write_byte(uint8_t address, uint8_t value) { // Assumes master program is enabled. 
+void eeprom_write_byte(uint8_t address, uint8_t value) { 
 	EEAR = address; 
 	EEDR = value; 
 	/* According to the datasheet (page 21-22), the master program must be enabled less than 4 clock cycles 
@@ -20,12 +20,13 @@ void eeprom_write_byte(uint8_t address, uint8_t value) { // Assumes master progr
 	START_WRITE; 
 }
 
-void eeprom_update_byte(uint8_t address, uint8_t value) { // Assumes master program is enabled. 
+void eeprom_update_byte(uint8_t address, uint8_t value) { 
 	if (eeprom_read_byte(address) != value) {
 		eeprom_write_byte(address, value);
 	}
 }
 
+/* Functions for the color */ 
 Color eeprom_read_color(uint8_t index) {
 	Color c; 
 	// Addresses for each component. e.g. the first color has R at 0x00, G at 0x01, and B at 0x02.
@@ -40,8 +41,7 @@ Color eeprom_read_color(uint8_t index) {
 	return c;
 }
 
-/* Functions for updating the color. */
-void eeprom_update_color(Color c, uint8_t index) { // Assumes master program is enabled. 
+void eeprom_update_color(Color c, uint8_t index) { 
 	// Addresses for each component. e.g. the first color has R at 0x00, G at 0x01, and B at 0x02. 
 	uint8_t red_address = 3 * index; 
 	uint8_t green_address = 3 * index + 1; 

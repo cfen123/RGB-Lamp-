@@ -137,10 +137,6 @@
       <SubType>compile</SubType>
       <Link>common.h</Link>
     </Compile>
-    <Compile Include="common.h">
-      <SubType>compile</SubType>
-      <Link>common.h</Link>
-    </Compile>
     <Compile Include="eeprom.c">
       <SubType>compile</SubType>
       <Link>eeprom.c</Link>
@@ -151,6 +147,14 @@
     </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="rgb_led.c">
+      <SubType>compile</SubType>
+      <Link>rgb_led.c</Link>
+    </Compile>
+    <Compile Include="rgb_led.h">
+      <SubType>compile</SubType>
+      <Link>rgb_led.h</Link>
     </Compile>
     <Compile Include="timers.c">
       <SubType>compile</SubType>

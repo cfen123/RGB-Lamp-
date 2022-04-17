@@ -29,9 +29,3 @@ void timer1_config() {
 	GTCCR |= (1 << COM1B1); // Non-inverting mode, inverted OC1B not connected
 	GTCCR &= ~(1 << COM1B0);
 }
-
-void change_color(Color c) {
-	OCR0A = c.R; // Red
-	OCR1A = c.G; // Green 
-	OCR1B = c.B; // Blue
-}

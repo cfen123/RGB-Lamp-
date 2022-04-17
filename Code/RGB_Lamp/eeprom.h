@@ -48,7 +48,7 @@ uint8_t eeprom_read_byte(uint8_t address); // Reads a byte from a specific addre
 void eeprom_write_byte(uint8_t address, uint8_t value); // Writes a byte to a specific address. 
 void eeprom_update_byte(uint8_t address, uint8_t value); // Updates a byte, avoiding rewriting it if the byte is unchanged. 
 
-/* Functions for updating the color. */ 
+/* Functions for the color. */ 
 Color eeprom_read_color(uint8_t index); 
 void eeprom_update_color(Color c, uint8_t index); 
 void eeprom_colors_init(Color* color_array, uint8_t n_colors); // Copies the colors in an array into the EEPROM.  
@@ -56,6 +56,5 @@ void eeprom_colors_init(Color* color_array, uint8_t n_colors); // Copies the col
 /* Functions for updating the state */ 
 void update_solid_mode(); 
 void update_cycling_mode();
-
 
 #endif 

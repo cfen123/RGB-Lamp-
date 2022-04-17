@@ -7,11 +7,12 @@
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="1910" x="0" flags="00000002" y="0" h="100" pid="0" iid="-1">
+   <POPUP w="1910" x="0" flags="00000002" y="0" h="180" pid="0" iid="-1">
     <PROPERTIES>
      <ITEM name="Message Column Width">1773</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
      <ITEM name="Source Column Width">100</ITEM>
+     <ITEM name="Time Column Width">120</ITEM>
      <ITEM name="Version">100</ITEM>
     </PROPERTIES>
    </POPUP>
@@ -63,7 +64,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="12" x="5" flags="0000000b" y="106" h="20" pid="6" iid="1">
+   <POPUP w="12" x="181" flags="0000000b" y="646" h="20" pid="6" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -83,7 +84,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="16" x="158" flags="80000000" y="249" h="32" pid="14" iid="1">
+   <POPUP w="16" x="158" flags="00000000" y="249" h="32" pid="14" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -113,8 +114,10 @@
      <ITEM name="TopLineAddress">00000020</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="637" x="1045" flags="0000002b" y="178" h="733" pid="1" iid="1">
+   <POPUP w="637" x="1045" flags="0000002a" y="178" h="733" pid="1" iid="1">
     <PROPERTIES>
+     <ITEM name="Breakpoint 0">"eeprom_update_byte",00F8,000E,0845,4C21,1
+</ITEM>
      <ITEM name="CaseSensitive">No</ITEM>
      <ITEM name="DISPADDRS">Yes</ITEM>
      <ITEM name="DISPLNUMS">No</ITEM>
@@ -141,7 +144,7 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="695" x="200" flags="00000000" y="50" h="453" pid="0" iid="12">
+   <POPUP w="695" x="47" flags="00000000" y="182" h="453" pid="0" iid="12">
     <PROPERTIES/>
    </POPUP>
   </PWI>
