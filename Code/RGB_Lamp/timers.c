@@ -10,8 +10,8 @@ void timer0_config() {
 	TCCR0B &= ~(1 << WGM02); 
 	
 	// Set up OC0A non-inverting PWM
+	TCCR0A |= (1 << COM0A1);
 	TCCR0A &= ~(1 << COM0A0); 
-	TCCR0A |= (1 << COM0A1); 
 }
 
 void timer1_config() {

@@ -3,21 +3,15 @@
 
 /* 
 	Configuring the external interrupts for the push buttons on PB2 (PCINT2/INT0) and PB3 (PCINT3), 
-	which are the color changing and ON/OFF buttons respectively. 
+	which are the solid and cycling color buttons respectively. 
 	
 	These are active low switches so the input pins are low when the button is pressed. 
 	
-	As the color button is on INT0 with a falling edge interrupt, it will be disabled in power-down sleep mode 
-	as desired. 
 */ 
 
-#define ON_OFF_BTN_LOW (~PINB & (1 << PCINT3)) 
+#define SOLID_BTN_PRESSED (~PINB & (1 << PCINT2))
+#define CYCLING_BTN_PRESSED (~PINB & (1 << PCINT3)) 
 
-#define SLEEP_ENABLED (MCUCR & (1 << SE))
-
-#define CLEAR_PCINT_FLAG GIFR |= (1 << PCIF) 
-
-void color_btn_init(); // Configure color changing button on PCINT2/INT0. 
-void on_off_btn_init(); // Configure on/off button on PCINT3. 
+void buttons_init(); // Configure buttons 
 
 #endif

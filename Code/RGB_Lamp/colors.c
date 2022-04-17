@@ -1,4 +1,5 @@
 #include "colors.h"
+#include "eeprom.h"
 
 static Color colors[NUMBER_OF_COLORS]; 
 
@@ -11,7 +12,7 @@ Color color(uint8_t R, uint8_t G, uint8_t B) {
 }
 
 Color get_color(uint8_t num) {
-	return colors[num]; 
+	return eeprom_read_color(num);
 }
 
 void init_colors() {
@@ -20,4 +21,5 @@ void init_colors() {
 	colors[2] = GREEN; 
 	colors[3] = BLUE; 
 	colors[4] = PURPLE;
+	eeprom_colors_init(colors, NUMBER_OF_COLORS);
 }
