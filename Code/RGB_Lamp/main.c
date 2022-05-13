@@ -7,7 +7,6 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <iotn25.h>
 #include "rgb_led.h"
 #include "timers.h"
 #include "buttons.h"
@@ -15,11 +14,11 @@
 
 int main(void)
 {
-	buttons_init();
-	timer0_config(); 
+	// buttons_init();
 	timer1_config(); 
+	timer2_config(); 
 	init_colors();
-	change_color(get_color(0));
+	change_LED_color(get_color(0)); // Initialize to default. 
 	TURN_LED_ON;
 	sei();
 	

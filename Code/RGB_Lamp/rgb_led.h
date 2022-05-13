@@ -7,8 +7,9 @@
    the color cycling. */ 
 
 // The LED can be turned on by making the PWM pins outputs.
-#define TURN_LED_ON DDRB |= (1 << PB0)|(1 << PB1)|(1 << PB4)
+// Red: PB1 (OC1A), Green: PB2 (OC1B), Blue: PB3 (OC2A)
+#define TURN_LED_ON DDRB |= (1 << PB1)|(1 << PB2)|(1 << PB3)
 
-void change_color(Color c); // Changes the color displayed by altering the OCRxx registers.
+void change_LED_color(Color c); // Changes the color displayed by altering the OCRxx registers.
 
 #endif

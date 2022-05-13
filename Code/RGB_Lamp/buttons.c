@@ -1,21 +1,30 @@
 #include "buttons.h"
-#include "eeprom.h"
+#include "rgb_led.h"
+#include "colors.h"
 #include <avr/io.h>
-#include <iotn25.h>
 #include <avr/interrupt.h>
 
-// ISR for changing the state of the LED.  
-ISR(PCINT0_vect) {
-	// Check which button is pressed and change the state accordingly. 
-	if (SOLID_BTN_PRESSED) {
-		update_solid_mode(); 
+// State variables 
+static uint8_t solid_mode = 0; 
+static uint8_t cycling_mode = 0; 
+
+// Solid 
+ISR(INT0_vect) {
+	if (solid_mode < NUMBER_OF_COLORS) {
+		solid_mode++;
 	}
-	else if (CYCLING_BTN_PRESSED) {
-		update_cycling_mode();
+	else {
+		solid_mode = 0; 
 	}
+	change_LED_color(get_color(solid_mode)); 
+}
+
+// Cycling 
+ISR(INT1_vect) {
+	update_cycling_mode();
 }
 
 void buttons_init() {
-	GIMSK |= (1 << PCIE); // Enable pin change interrupts.
-	PCMSK |= (1 << PCINT2)|(1 << PCINT3); // Enable both buttons. 
+	EIMSK |= (1 << INT0)|(1 << INT1); // Enable interrupts 
+	EICRA |= (1 << ISC01)|(1 << ISC11); // Falling edge 
 }

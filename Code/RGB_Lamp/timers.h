@@ -2,17 +2,15 @@
 #define TIMERS_H 
 
 /* 
-	Timer/Counter 0 and Timer/Counter 1 will be used to generate PWM signals on 
-	PB0 (red), PB1 (green) and PB4 (blue). Since the LED is common cathode, non-inverting PWM 
-	will be used. OC0A on PB1, OC0B/OC1A on PB1 and OC1B on PB4 will be the PWM outputs. 
+	Timer/Counter 1 and Timer/Counter 2 will be used to generate PWM signals on 
+	PB1 (red), PB2 (green) and PB3 (blue). Since the LED is common cathode, non-inverting PWM 
+	will be used. OC1A on PB1, OC1B on PB2 and OC2A on PB3 will be the PWM outputs. 
 	
-	A prescaler of 8 will be used, resulting in a PWM frequency of approximately 500Hz (488.2Hz).
-	
-	The timers should overflow at OxFF since the colors go from 0 to 255. 
+	A prescaler of 8 will be used, resulting in a PWM frequency of approximately 1kHz.
 	
 */ 
 
-void timer0_config(); // Initializes Timer/Counter 0
-void timer1_config(); // Initializes Timer/Counter 1
+void timer1_config(); // Initializes Timer/Counter 0
+void timer2_config(); // Initializes Timer/Counter 1
 
 #endif
