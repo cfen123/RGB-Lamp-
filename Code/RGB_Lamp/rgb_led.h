@@ -3,6 +3,8 @@
 
 #include "colors.h"
 
+#define NUMBER_OF_CYCLING_MODES 2
+
 /* All functions directly related to the RGB LED's color, which include changing the color and 
    the color cycling. */ 
 
@@ -11,5 +13,7 @@
 #define TURN_LED_ON DDRB |= (1 << PB1)|(1 << PB2)|(1 << PB3)
 
 void change_LED_color(Color c); // Changes the color displayed by altering the OCRxx registers.
+void grayscale_cycling(); // First cycling mode 
+void cycling_1();
 
 #endif

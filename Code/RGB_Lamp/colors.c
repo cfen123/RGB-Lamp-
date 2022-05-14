@@ -20,4 +20,9 @@ void init_colors() {
 	colors[2] = GREEN; 
 	colors[3] = BLUE; 
 	colors[4] = PURPLE;
+	colors[5] = YELLOW; 
+	colors[6] = SILVER;
+	colors[7] = OLIVE; 
+	colors[8] = TEAL; 
+	colors[9] = CRIMSON;
 }
